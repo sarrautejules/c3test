@@ -6,8 +6,13 @@ import net;
 
 fn void main(String[] args)
 {
-	io::printfn("OK");
 	String[16] ip;
-	net::getipfromhostname("google.fr", &ip);
+	if(args.len > 1) {
+		io::printfn("OK arg %s", args[1]);
+		net::getipfromhostname(args[1], &ip);
+	}
+	else {
+		net::getipfromhostname("google.fr", &ip);
+	}
 	io::printfn("%s", (ZString)&ip);
 }

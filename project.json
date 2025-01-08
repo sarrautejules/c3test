@@ -27,7 +27,7 @@
   // "target": "windows-x64",
   // Targets.
   "targets": {
-    "c3c": {
+    "http_proto": {
       // Executable or library.
       "type": "executable",
       // Additional libraries, sources

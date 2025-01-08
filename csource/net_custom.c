@@ -15,7 +15,7 @@ void get_ip_from_hostname(char* hostname, char* resolved_ip) {
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_protocol = IPPROTO_TCP;
     struct addrinfo *result;
-    int status = getaddrinfo("google.fr", "80", &hints, &result);
+    int status = getaddrinfo(hostname, "80", &hints, &result);
     addr = (struct sockaddr_in*)result->ai_addr;
     inet_ntop(AF_INET, &addr->sin_addr, resolved_ip, INET_ADDRSTRLEN);
     freeaddrinfo(result);
